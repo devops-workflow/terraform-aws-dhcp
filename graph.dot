@@ -1,0 +1,19 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_vpc_dhcp_options.dhcp_opts" [label = "aws_vpc_dhcp_options.dhcp_opts", shape = "box"]
+		"[root] aws_vpc_dhcp_options_association.vpc_dhcp_options_association" [label = "aws_vpc_dhcp_options_association.vpc_dhcp_options_association", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] provider.aws"
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] var.domain_controllers"
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] var.domain_name"
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] var.environment"
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] var.name"
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] var.namespaced"
+		"[root] aws_vpc_dhcp_options.dhcp_opts" -> "[root] var.tags"
+		"[root] aws_vpc_dhcp_options_association.vpc_dhcp_options_association" -> "[root] aws_vpc_dhcp_options.dhcp_opts"
+		"[root] aws_vpc_dhcp_options_association.vpc_dhcp_options_association" -> "[root] var.vpc_id"
+	}
+}
+
